@@ -7,23 +7,22 @@ error_reporting(0);
 session_start(); 
 
 if (isset($_SESSION['login'])) {
-    header("Location: index.php");
+    header("Location: home.php");
 }
  
 if (isset($_POST['submit'])) {
-    $email = $_POST['email'];
+    $username = $_POST['username'];
     $password = md5($_POST['password']);
  
-    $sql = "SELECT * FROM users WHERE email='$email' AND password='$password'";
+    $sql = "SELECT * FROM users WHERE username='$username' AND password='$password'";
     $result = mysqli_query($conn, $sql);
     if ($result->num_rows > 0) {
         $row = mysqli_fetch_assoc($result);
         $_SESSION['login'] = true;
         $_SESSION['username'] = $row['username'];
-        $_SESSION['id'] = $row['id'];
+        $_SESSION['id_user'] = $row['id_user'];
         $_SESSION['password'] = md5($row['$password']);
-        $_SESSION['email'] = $row['email'];
-        header("Location: index.php");
+        header("Location: home.php");
     } else {
         echo "<script>alert('Email atau password Anda salah. Silahkan coba lagi!')</script>";
     }
@@ -32,14 +31,14 @@ if (isset($_POST['submit'])) {
  
 ?>
 
-<form action="" method="POST" class="login-email">
+<form action="" method="POST">
         <h4>Login</h4>
         <hr style="margin:10px">
             <div>
-                <input type="email" class="form-control-sm" placeholder="Email" name="email" value="<?php echo $email; ?>" required>
+                <input type="text" placeholder="Username" name="username" value="<?php echo $email; ?>" required>
             </div>
             <div>
-                <input type="password" class="form-control-sm" placeholder="Password" name="password" value="<?php echo $_POST['password']; ?>" required>
+                <input type="password" placeholder="Password" name="password" value="<?php echo $_POST['password']; ?>" required>
             </div>
             <div>
                 <button name="submit">Login</button>

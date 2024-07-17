@@ -4,5 +4,5 @@
     session_destroy();
 
     include 'config.php';
-    header('Location: login.php');
+    header('Location: index.php');
 ?>

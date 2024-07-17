@@ -1,3 +1,4 @@
-<p>laman index</p>
+<h4>Selamat datang di *nama website*</h4>
 
-<a type="submit" href="logout.php">Log Out</a>
+<p><a href="login.php">Login</a></p>
+<a href="register.php">Register </a>
