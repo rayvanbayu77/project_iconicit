@@ -28,7 +28,7 @@ if (isset($_POST['submit'])) {
                 echo "<script>alert('Terjadi kesalahan.')</script>";
             }
         } else {
-            echo "<script>alert('username ssudah terdaftar.')</script>";
+            echo "<script>alert('username sudah terdaftar. harap pilih username lainnya')</script>";
         }
     } else {
         echo "<script>alert('Password Tidak Sesuai')</script>";
@@ -36,6 +36,12 @@ if (isset($_POST['submit'])) {
 }
  
 ?>
+<!DOCTYPE html>
+<html>
+
+<link rel="stylesheet" href="bootstrap/css/styles.css">
+
+<title>Daftar</title>
 
 <form action="" method="POST">
     <h4>Register</h4>
@@ -54,3 +60,6 @@ if (isset($_POST['submit'])) {
             </div>
             <p>Anda sudah punya akun? <a href="login.php">Login </a></p>
         </form>
+        
+        
+        </html>

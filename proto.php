@@ -14,23 +14,9 @@
 
 
           <h5>Klub yang tersedia :</h5>
+
 <?php 
-    $query = "SELECT * FROM klub ORDER BY id_klub DESC";
-    $result = mysqli_query($conn, $query);
-    while(
-        $row = mysqli_fetch_assoc($result)) :?>
 
-    <p> Klub <?= $row['nama_klub']?> <a href="klub.php?id=<?= $row['id_klub']; ?>"> Masuk </a></p>
-    
+if($_SESSION['id_user'] == $data['id_user']){?> <p>(Admin)</p> <?php }?>
 
-    <?php endwhile; ?>
-
-
-    href="buat_klub_kategori.php?id=<?= $opsi['id']; ?>" 
-    value="<?= $opsi['nama_kategori'] ?>"
-    href="buat_klub_kategori.php?id=<?= $opsi['id']; ?>"
-
-    <?php
-    $sql = $conn->query("SELECT * FROM users WHERE id = $id") or die(mysqli_error($conn));
-    $editSql = $sql->fetch_assoc();
 ?>

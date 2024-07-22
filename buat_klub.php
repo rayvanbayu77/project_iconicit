@@ -16,6 +16,7 @@ if (isset($_POST['submit_klub'])) {
     $kategori = $_POST['kategori'];
     $id_kategori = $_POST['id_kategori'];
     $sub_kategori = $_POST['sub_kategori'];
+    $status = $_POST['status'];
 
     if ($kategori == 'Software'){
         $id_sheesh = 1;
@@ -33,8 +34,8 @@ if (isset($_POST['submit_klub'])) {
     $sql = "SELECT * FROM klub WHERE nama_klub='$nama_klub'";
     $result = mysqli_query($conn, $sql);
     if (!$result->num_rows > 0) {
-        $sql = "INSERT INTO klub (nama_klub, id_user, username, deskripsi, kategori, id_kategori, sub_kategori) 
-                VALUES ('$nama_klub', '$id_user', '$username', '$deskripsi', '$kategori', '$id_sheesh', '$sub_kategori')";
+        $sql = "INSERT INTO klub (nama_klub, id_user, username, deskripsi, kategori, id_kategori, sub_kategori, status) 
+                VALUES ('$nama_klub', '$id_user', '$username', '$deskripsi', '$kategori', '$id_sheesh', '$sub_kategori', '$status')";
         $result = mysqli_query($conn, $sql); 
         if($result) {
             $nama_klub = "";
@@ -44,6 +45,7 @@ if (isset($_POST['submit_klub'])) {
             $kategori = "";
             $id_kategori = "";
             $sub_kategori = "";
+            $status = "";
             
             if($result > 0){
                 $nama_klub1 = $_POST['nama_klub'];
@@ -51,7 +53,6 @@ if (isset($_POST['submit_klub'])) {
                 $username1 = $_POST['username1'];
                 $nama_klub1 = $_POST['nama_klub'];
                 $roles = $_POST['roles'];
-
                 $sql2 = "INSERT INTO member (id_user, username, nama_klub, roles)
                         VALUES ('$id_user1', '$username1', '$nama_klub1', '$roles')";
                 $result2 = mysqli_query($conn, $sql2);
@@ -83,22 +84,27 @@ if (isset($_POST['submit_klub'])) {
     
     <a>Tulis informasi tentang klubmu</a><br>
     <input type="text" placeholder="Tulis nama klubmu" name="nama_klub" required><br>
-    <textarea type="text" placeholder="Jelaskan tentang klubmu" name="deskripsi"></textarea>
+    <textarea type="text" placeholder="Jelaskan tentang klubmu" name="deskripsi" required></textarea>
     <br>
     
     
-    <p>Pilih kategori klub  </p>
+    <p>Pilih kategori klub : </p>
         <?php
             $sql1 = "SELECT * FROM kategori ORDER BY id";
             $result1 = mysqli_query($conn, $sql1);
             while (
                 $opsi = mysqli_fetch_assoc($result1)): ?>
 
-            <input type="radio" name="kategori" value="<?= $opsi['nama_kategori'] ?>"> <?= $opsi['nama_kategori'] ?>
+            <input type="radio" name="kategori" value="<?= $opsi['nama_kategori'] ?>" required> <?= $opsi['nama_kategori'] ?>
 
             <?php
             endwhile;            
             ?>
+            <br><br>
+            <p>Pilih status klub : </p>
+
+            <input type="radio" name="status" value="Public" required> Public
+            <input type="radio" name="status" value="Private" required> Private
     <br><br>
     <button name="submit_klub">Buat</button>
 </form>

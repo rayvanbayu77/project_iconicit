@@ -31,6 +31,11 @@ if (isset($_POST['submit'])) {
  
 ?>
 
+<!DOCTYPE html>
+<html>
+
+<title>Login</title>
+
 <form action="" method="POST">
         <h4>Login</h4>
         <hr style="margin:10px">
@@ -45,3 +50,4 @@ if (isset($_POST['submit'])) {
             </div>
             <p>Anda belum punya akun? <a href="register.php">Register</a></p>
         </form>
+</html>
