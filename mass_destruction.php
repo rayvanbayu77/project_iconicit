@@ -8,7 +8,7 @@ $id = $_GET["id"];
 
 $conn->query("DELETE FROM klub WHERE id_klub = $id");
 $conn->query("DELETE FROM member WHERE id_klub = $id");
-$conn->query("DELETE FROM member WHERE id_klub = $id");
+$conn->query("DELETE FROM request WHERE id_klub = $id");
 $conn->query("DELETE FROM chat WHERE id_klub = $id");
 
 
