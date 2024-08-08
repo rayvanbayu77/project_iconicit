@@ -1,0 +1,48 @@
+*{  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Anek Kannada';
+}
+
+.topnav {
+  background-color: #0062e2;
+  overflow: hidden;
+}
+
+.topnav img {
+    float: left;
+    width: 9%;
+    height: 9%;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+.topnav a {
+  float: right;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #004aad;
+}
+
+.header-text {
+    padding-left: 10px;
+    font-size: 16px;
+}
+
+.list-club {
+    padding-left: 10px;
+}
+
+.hr {
+    margin-left: 10px;
+    margin-right: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

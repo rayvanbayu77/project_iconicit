@@ -39,27 +39,36 @@ if (isset($_POST['submit'])) {
 <!DOCTYPE html>
 <html>
 
-<link rel="stylesheet" href="bootstrap/css/styles.css">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width-device-width, initial-scale=1.0">
+<link href='https://fonts.googleapis.com/css?family=Anek Kannada' rel='stylesheet'>
+<link rel="stylesheet" href="style.css">
+<title>Register</title>
+</head>
 
-<title>Daftar</title>
 
+<div class="register-box">
 <form action="" method="POST">
-    <h4>Register</h4>
+    <div class="register-header">
+        <h4>Register</h4>
+    </div>
         <hr style="margin: 10px;">
-            <div>
+            <div class="input-field">
                 <input type="text" placeholder="Username" name="username" value="<?php echo $username; ?>" required>
             </div>
-            <div>
+            <div class="input-field">
                 <input type="password" placeholder="Password" name="password" value="<?php echo $_POST['password']; ?>" required>
             </div>
-            <div>
+            <div class="input-field">
                 <input type="password" placeholder="Confirm Password" name="cpassword" value="<?php echo $_POST['cpassword']; ?>" required>
             </div>
             <div class="input-group">
-                <button name="submit">Register</button>
+                <button class="submit" name="submit">Register</button>
             </div>
-            <p>Anda sudah punya akun? <a href="login.php">Login </a></p>
-        </form>
-        
-        
-        </html>
+            <hr style="margin: 10px;">
+            <p style="color: black;">Anda sudah punya akun? <a href="login.php">Login </a></p>
+    </form>
+</div>
+</html>

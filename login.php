@@ -34,20 +34,32 @@ if (isset($_POST['submit'])) {
 <!DOCTYPE html>
 <html>
 
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width-device-width, initial-scale=1.0">
+<link href='https://fonts.googleapis.com/css?family=Anek Kannada' rel='stylesheet'>
+<link rel="stylesheet" href="style.css">
 <title>Login</title>
+</head>
 
+<div class="register-box">
 <form action="" method="POST">
+    <div class="register-header">
         <h4>Login</h4>
+        </div>
         <hr style="margin:10px">
-            <div>
+            <div class="input-field">
                 <input type="text" placeholder="Username" name="username" value="<?php echo $email; ?>" required>
             </div>
-            <div>
+            <div class="input-field">
                 <input type="password" placeholder="Password" name="password" value="<?php echo $_POST['password']; ?>" required>
             </div>
-            <div>
-                <button name="submit">Login</button>
+            <div class="input-group">
+                <button class="submit" name="submit">Login</button>
             </div>
-            <p>Anda belum punya akun? <a href="register.php">Register</a></p>
+            <hr style="margin: 10px;">
+            <p style="color: black;">Anda belum punya akun? <a href="register.php">Register</a></p>
         </form>
+        </div>
 </html>
